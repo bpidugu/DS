@@ -29,6 +29,17 @@ def allAboutStack():
    
     print(stack1)
 
+class Node:
+    def __init__(self, val=None) -> None:
+        self.next = None
+        self.val = val
+
+
+
+def reverseLinkedList(head):
+    
+
+
 
 
 if __name__ == "__main__":
