@@ -41,6 +41,24 @@ def dictionary():
     print("REVERSED.....")
     for i in reversed(range(len(key_val))):
             print(i)
+
+
+class LinkedList:
+    def __init__(self,value):
+        self.value = value
+        self.next = None
+
+# linkedListOne = 2->4->7->1
+# linkedListTwo = 9>4->5
+# output = 1->9->2->2
+def sumofLinkedList(linkedListOne, linkedListTwo):
+    nodeOne = linkedListOne
+    nodeTow = linkedListTwo
+    carry = 0
+    newLinkedList = LinkedList(0)
+    currNode = newLinkedList
+
+    pass
 def main():
     dictionary()
 
