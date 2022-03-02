@@ -44,7 +44,7 @@ def encodeByOrientation(string, row):
 (1,0) (1,1) (1,2) (1,3) (1,4)
 (2,0) (2,1) (2,2) (2,3) (2,4)
 
-
+(i,j)
 (0,0) (0,1) (0,2) (0,3) (0,4)
 (1,0) (1,1) (1,2) (1,3) (1,4)
 (2,0) (2,1) (2,2) (2,3) (2,4)
@@ -61,11 +61,12 @@ def decode(string,row):
     idxI=0
     idxJ=0
     incr =0 
+
     for c in string:
         print(c)
         op[idxI][idxJ] = c
         if(idxJ == col-1):
-            print('next')
+           
             idxJ =0
             incr += 1
             idxI = incr
@@ -74,24 +75,42 @@ def decode(string,row):
             
     a = ""
     # TODO:
-    for i in range(len(op)):
-        for j in range(len(op[i])):
-            c = op[i][j]
-            if(c == ' '):
-                c = '_'
-           
-            a += c
+    idxI=0
+    idxJ=0
+    incr =0
+    diag = 0
+    for i in range(row*col):
+        print(idxI,idxJ)
+        c = op[idxI][idxJ]
+        if(c == '_'): c = ' '
+        
+        a += c
+        diag += 1
+        if (idxI==0 and idxJ==col-1):
+            break;
+        if(diag == row or idxJ==col-1):
+            print('next')
+            idxI =0
+            incr +=1
+            idxJ = incr
+            diag = 0
+        else:
+            idxI +=1
+            idxJ +=1
 
-    print(op)
+    print(a)
     return a
-    pass
+
 
 
     
 
 
 if __name__ == "__main__":
-    encodeByOrientation("my name is",3)
-    s = encodeByOrientation("hello world",2)
-    decode(s,2)
+    s = encodeByOrientation("my name is",3)
+    s1= encodeByOrientation("hello world",2)
+    decode(s,3)
+    decode(s1,2)
     
+
+
