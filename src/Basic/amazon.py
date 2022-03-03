@@ -55,6 +55,10 @@ def encodeByOrientation(string, row):
 
 def decode(string,row):
     #cnt = len(string)
+    if(string is None): return None
+    if(len(string) <=3): return string
+    
+
     col = math.ceil(len(string)/row)
     op = [['_' for i in range(col)] for j in range(row)]
     print(op)
@@ -109,8 +113,12 @@ def decode(string,row):
 if __name__ == "__main__":
     s = encodeByOrientation("my name is",3)
     s1= encodeByOrientation("hello world",2)
+    en1= encodeByOrientation("benjamin is krupakar",2)
     decode(s,3)
     decode(s1,2)
+    dc1 = decode(en1,2)
+    print(en1,dc1)
+   
     
 
 
