@@ -7,6 +7,21 @@
 #7. Algorithms: recursion, Fibionacci, BSearch, Sorting, Guess & Check, and Graph Traversal
 
 
+x,y=24,5
+print(x+y)
+print(x/y)
+print(x%y)
+print("Floor Quotient of x & y",x//y) #
+print(abs(-10))
+print(int("20"))
+print(float("32"))
+print(divmod(x,y))
+print(pow(x,y))
+print(x**y)
+
+
+
+
 a = [ [2, 4, 6, 8 ], 
     [ 1, 3, 5, 7 ], 
     [ 8, 6, 4, 2 ], 
@@ -23,3 +38,8 @@ n = 5
   
 a = [[False for x in range(n)] for x in range(m)]
 print(a)
+
+lp = [x*y for x in range(3) for y in range(3) if x<y]
+
+
+print(lp)
